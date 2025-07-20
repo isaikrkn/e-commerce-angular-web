@@ -10,11 +10,9 @@ on:
       - main
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+  build_and_deploy:
     runs-on: ubuntu-latest
     name: Build and Deploy Angular App
-
     steps:
       - name: 📥 Checkout repo
         uses: actions/checkout@v3
@@ -36,5 +34,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "."                     # Root of Angular project (where angular.json is)
-          output_location: "dist/ecommerce-app" # Where the Angular build goes
+          app_location: "."                     # Angular project root
+          output_location: "dist/ecommerce-app" # Tells Azure where index.html is
