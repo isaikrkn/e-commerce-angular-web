@@ -25,9 +25,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ecommerce-app
 
       - name: Build Angular App
         run: npm run build -- --configuration production
+        working-directory: ecommerce-app
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -35,5 +37,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "."                      # Root of your Angular app source
-          output_location: "dist/ecommerce-app"  # Build output directory (must contain index.html)
+          app_location: "ecommerce-app"                      # Path to your Angular app source
+          output_location: "ecommerce-app/dist/ecommerce-app" # Path to the build output (must contain index.html)
