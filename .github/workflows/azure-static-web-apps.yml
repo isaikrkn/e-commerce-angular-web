@@ -34,5 +34,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "."                     # Angular project root
-          output_location: "dist/ecommerce-app" # Tells Azure where index.html is
+          app_location: "dist/ecommerce-app"     # ✅ This is the correct final output directory
+          output_location: ""                    # ✅ Leave this empty since build is done manually
