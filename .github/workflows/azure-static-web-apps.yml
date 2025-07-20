@@ -34,5 +34,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: ""                         # ✅ Important: this disables auto-build by Azure
-          output_location: "dist/ecommerce-app"    # ✅ This is where the built index.html is
+          app_location: ""                         # ✅ Empty = use current folder
+          output_location: "dist/ecommerce-app"    # ✅ Path to your built files
