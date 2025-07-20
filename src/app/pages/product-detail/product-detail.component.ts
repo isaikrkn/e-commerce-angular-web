@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common'; // ✅ Required for *ngIf
 import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
+  standalone: true, // ✅ Mark as standalone
+  imports: [CommonModule], // ✅ Add CommonModule for *ngIf
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
@@ -19,8 +22,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   loadProduct(): void {
-    // You can fetch product details from an API here
-    // For now, using a mock product list
     const products = [
       { id: 1, name: 'Product 1', price: 100, description: 'Detailed description of product 1' },
       { id: 2, name: 'Product 2', price: 200, description: 'Detailed description of product 2' },

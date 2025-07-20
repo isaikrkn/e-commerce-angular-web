@@ -1,7 +1,12 @@
-<div *ngIf="product">
-    <h1>{{ product.name }}</h1>
+<div class="container mt-5" *ngIf="product">
+  <div class="card p-4 shadow">
+    <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
-    <p>Price: ${{ product.price }}</p>
-    <button (click)="addToCart()">Add to Cart</button>
+    <p><strong>Price:</strong> €{{ product.price }}</p>
+    <button class="btn btn-success" (click)="addToCart()">Add to Cart</button>
   </div>
-  
+</div>
+
+<div class="text-center mt-5" *ngIf="!product">
+  <p class="text-muted">Product not found.</p>
+</div>

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service'; // ✅ Import this
 
 @Component({
   selector: 'app-home',
+  standalone: true, // ✅ Yes, this is correct
+  imports: [CommonModule], // ✅ Use this for *ngFor, *ngIf
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
