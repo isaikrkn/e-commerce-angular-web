@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Angular App
     steps:
-      - name: 📥 Checkout repo
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
       - name: 📦 Setup Node.js
@@ -34,5 +34,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "dist/ecommerce-app"     # ✅ This is the correct final output directory
-          output_location: ""                    # ✅ Leave this empty since build is done manually
+          app_location: ""                         # ✅ Important: this disables auto-build by Azure
+          output_location: "dist/ecommerce-app"    # ✅ This is where the built index.html is
