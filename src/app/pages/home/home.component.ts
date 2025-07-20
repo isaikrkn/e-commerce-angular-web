@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service'; // ✅ Import this
+import { HeroSectionComponent } from './hero-section/hero-section.component'; // ✅ Adjust the path if needed
 
 @Component({
   selector: 'app-home',
   standalone: true, // ✅ Yes, this is correct
-  imports: [CommonModule], // ✅ Use this for *ngFor, *ngIf
+  imports: [CommonModule, HeroSectionComponent], // ✅ Use this for *ngFor, *ngIf
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
