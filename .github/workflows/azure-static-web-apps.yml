@@ -13,7 +13,6 @@ jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,8 +28,8 @@ jobs:
       - name: Build Angular App
         run: npm run build -- --configuration production
 
-      - name: List build output
-        run: ls -al dist/ecommerce-app
+      - name: List Angular build output
+        run: ls -lah dist/ecommerce-app
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
