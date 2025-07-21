@@ -1,0 +1,77 @@
+/* Header container with space between logo and nav */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Keeps header at top on scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo wrapper styles */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;           /* Keep display size */
+  width: auto;
+  image-rendering: -webkit-optimize-contrast; /* Better sharpness in WebKit */
+  image-rendering: crisp-edges;               /* For other browsers */
+  image-rendering: pixelated;                  /* Optional fallback */
+
+  /* Optional: slight smoothing if pixelated */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Navigation link base style */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Active and hover states */
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #f0f0f0;
+  color: #0078d4; /* Example accent color */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 8px;
+  }
+  
+  .nav-links a {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+}
