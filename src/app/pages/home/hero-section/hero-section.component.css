@@ -1,7 +1,13 @@
 .hero-slide {
   height: 90vh;
-  background: linear-gradient(rgba(14, 34, 44, 0.7), rgba(14, 34, 44, 0.7)),
-              url('/assets/polycarbonate.jpg') center center / cover no-repeat;
   padding-left: 10%;
   padding-right: 10%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-blend-mode: overlay;
+  background-color: rgba(14, 34, 44, 0.7); /* fallback for gradient blend */
 }
